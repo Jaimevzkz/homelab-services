@@ -1,0 +1,3 @@
+CLOUDFLARE_API_TOKEN={your-cloudflare-token}
+IMMICH_LOCALHOST={localIp:immich-port}
+IMMICH_SUBDOMAIN={your-subdomain-for-cloudflare}

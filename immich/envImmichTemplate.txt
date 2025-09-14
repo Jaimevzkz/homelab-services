@@ -1,0 +1,10 @@
+UPLOAD_LOCATION={your-upload-location}
+
+DB_DATA_LOCATION={your-db-location}
+
+IMMICH_VERSION={your-immich-version}
+
+DB_PASSWORD={your-db-password}
+
+DB_USERNAME={your-db-username}
+DB_DATABASE_NAME={your-dp-name}
