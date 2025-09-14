@@ -1,0 +1,14 @@
+(cloudflare) {
+  tls {
+    dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+  
+  }
+}
+
+# immich
+{env.IMMICH_SUBDOMAIN} {
+  reverse_proxy {env.IMMICH_LOCALHOST}
+
+  import cloudflare
+}
+
