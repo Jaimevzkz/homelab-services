@@ -7,8 +7,8 @@ services:
           - .env
         volumes:
             - ${DOCKER_CONFIG_FOLDER}/plex:/config
-            - ${DOCKER_CONFIG_FOLDER}/data/shows:/tv  
-            - ${DOCKER_CONFIG_FOLDER}/data/movies:/movies 
+            - ${MEDIA_DOWNLOAD_FOLDER}/data/shows:/tv  
+            - ${MEDIA_DOWNLOAD_FOLDER}/data/movies:/movies 
         restart: unless-stopped
         ports:
           - 32400:32400/tcp
@@ -22,7 +22,7 @@ services:
         privileged: true
         volumes:
             - ${DOCKER_CONFIG_FOLDER}/qbittorrent:/config
-            - ${DOCKER_CONFIG_FOLDER}/downloads:/data/downloads
+            - ${MEDIA_DOWNLOAD_FOLDER}/downloads:/data/downloads
         ports:
             - 8080:8080
     sonarr:
@@ -32,7 +32,7 @@ services:
           - .env
         volumes:
             - ${DOCKER_CONFIG_FOLDER}/sonarr:/config
-            - ${DOCKER_CONFIG_FOLDER}:/data
+            - ${MEDIA_DOWNLOAD_FOLDER}:/data
         ports:
             - 8989:8989
         restart: unless-stopped
@@ -43,7 +43,7 @@ services:
           - .env
         volumes:
             - ${DOCKER_CONFIG_FOLDER}/radarr:/config
-            - ${DOCKER_CONFIG_FOLDER}:/data
+            - ${MEDIA_DOWNLOAD_FOLDER}:/data
         ports:
             - 7878:7878
         restart: unless-stopped
@@ -54,7 +54,7 @@ services:
           - .env
         volumes:
             - ${DOCKER_CONFIG_FOLDER}/jackett:/config
-            - ${DOCKER_CONFIG_FOLDER}/downloads:/downloads
+            - ${MEDIA_DOWNLOAD_FOLDER}/downloads:/downloads
         ports:
             - 9117:9117
         restart: unless-stopped

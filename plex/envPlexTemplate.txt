@@ -1,4 +1,5 @@
-DOCKER_CONFIG_FOLDER={you-desired-docker-config-folder}
+DOCKER_CONFIG_FOLDER={your-desired-docker-config-folder}
+MEDIA_DOWNLOAD_FOLDER={your-desired-location-for-media}
 VERSION=docker
 PUID=1000
 PGID=1000
