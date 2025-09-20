@@ -10,10 +10,14 @@ info() {
 
 info "Pull Caddy"
 cd ~/homelab-services/caddy/
-sudo docker compose pull
+docker compose pull
 
 info "Pull Immich"
 cd ~/homelab-services/immich/
-sudo docker compose pull
+docker compose pull
+
+info "Pull Plex"
+cd ~/homelab-services/plex/
+docker compose pull
 
 info "All services pulled"

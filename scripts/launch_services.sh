@@ -10,11 +10,15 @@ info() {
 
 info "Caddy UP"
 cd ~/homelab-services/caddy/
-sudo docker compose up -d
+docker compose up -d
 
 
 info "Immich UP"
 cd ~/homelab-services/immich/
-sudo docker compose up -d
+docker compose up -d
+
+info "Plex UP"
+cd ~/homelab-services/plex/
+docker compose up -d
 
 info "All services up"

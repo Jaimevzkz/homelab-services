@@ -10,10 +10,14 @@ info() {
 
 info "Shutting down caddy"
 cd ~/homelab-services/caddy/
-sudo docker-compose down
+docker-compose down
 
 info "Shutting down immich"
 cd ~/homelab-services/immich/
-sudo docker-compose down
+docker-compose down
+
+info "Shutting down plex"
+cd ~/homelab-services/plex/
+docker-compose down
 
 info "All services shut down"

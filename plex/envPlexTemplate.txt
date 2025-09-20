@@ -1,0 +1,14 @@
+DOCKER_CONFIG_FOLDER={you-desired-docker-config-folder}
+VERSION=docker
+PUID=1000
+PGID=1000
+TZ=Europe/Amsterdam
+AUTO_UPDATE=true
+VPN_ENABLED=yes
+VPN_TYPE=openvpn
+LAN_NETWORK={your-local-ip}
+NAME_SERVERS=1.1.1.1,1.0.0.1
+ENABLE_SSL=yes
+HEALTH_CHECK_HOST=one.one.one.one
+
+

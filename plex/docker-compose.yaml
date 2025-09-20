@@ -1,0 +1,70 @@
+services:
+    plex:
+        image: lscr.io/linuxserver/plex:latest
+        container_name: plex
+        network_mode: bridge
+        env_file:
+          - .env
+        volumes:
+            - ${DOCKER_CONFIG_FOLDER}/plex:/config
+            - ${DOCKER_CONFIG_FOLDER}/data/shows:/tv  
+            - ${DOCKER_CONFIG_FOLDER}/data/movies:/movies 
+        restart: unless-stopped
+        ports:
+          - 32400:32400/tcp
+          - 32469:32469/udp
+    qbittorrent:
+        image: dyonr/qbittorrentvpn
+        restart: unless-stopped
+        container_name: qbittorrent
+        env_file:
+          - .env
+        privileged: true
+        volumes:
+            - ${DOCKER_CONFIG_FOLDER}/qbittorrent:/config
+            - ${DOCKER_CONFIG_FOLDER}/downloads:/data/downloads
+        ports:
+            - 8080:8080
+    sonarr:
+        image: lscr.io/linuxserver/sonarr:latest
+        container_name: sonarr
+        env_file:
+          - .env
+        volumes:
+            - ${DOCKER_CONFIG_FOLDER}/sonarr:/config
+            - ${DOCKER_CONFIG_FOLDER}:/data
+        ports:
+            - 8989:8989
+        restart: unless-stopped
+    radarr:
+        image: lscr.io/linuxserver/radarr:latest
+        container_name: radarr
+        env_file:
+          - .env
+        volumes:
+            - ${DOCKER_CONFIG_FOLDER}/radarr:/config
+            - ${DOCKER_CONFIG_FOLDER}:/data
+        ports:
+            - 7878:7878
+        restart: unless-stopped
+    jackett:
+        image: lscr.io/linuxserver/jackett:latest
+        container_name: jackett
+        env_file:
+          - .env
+        volumes:
+            - ${DOCKER_CONFIG_FOLDER}/jackett:/config
+            - ${DOCKER_CONFIG_FOLDER}/downloads:/downloads
+        ports:
+            - 9117:9117
+        restart: unless-stopped
+    overseerr:
+        image: lscr.io/linuxserver/overseerr:latest
+        container_name: overseerr
+        env_file:
+          - .env
+        volumes:
+            - ${DOCKER_CONFIG_FOLDER}/overseerr:/config
+        ports:
+            - 5055:5055
+        restart: unless-stopped
