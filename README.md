@@ -8,7 +8,7 @@ In this repository you may find the (public) files needed to set up a homelab th
     - After setting up additional files, run `docker compose up -d` to start the service.
     - Create a `.env` file following the `envImmichTemplate.txt` to insert your local values.
     - An example `.env` file can be downloaded using `wget -O .env https://github.com/immich-app/immich/releases/latest/download/example.env`.
-- [Plex](https://www.plex.tv/): A self hosted media server, you will finally be able to watch your (legally obtained) media easily!
-    - Create a `.env` file following the `envPlexTemplate.txt` to insert your local values.
-    - Using [qbittorrent](https://www.qbittorrent.org/), [sonarr](https://sonarr.tv/), [radarr](https://radarr.video/), [jackett](https://github.com/Jackett/Jackett) and [overseerr](https://overseerr.dev/).
-    - A really useful guide on how to set everything up can be found [here](https://gist.github.com/rickklaasboer/b5c159833ff2971fccd32296d8ba2260).
+- [Jellyfin](https://jellyfin.org/): A self hosted media server, you will finally be able to watch your (legally obtained) media easily!
+    - Create a `.env` file following the `envJellyfinTemplate.txt` to insert your local values.
+    - Using [qbittorrent](https://www.qbittorrent.org/), [sonarr](https://sonarr.tv/), [radarr](https://radarr.video/), [jackett](https://github.com/Jackett/Jackett) and [jellyseerr](https://github.com/fallenbagel/jellyseerr).
+    - A really useful guide on how to set plex up can be found [here](https://gist.github.com/rickklaasboer/b5c159833ff2971fccd32296d8ba2260), once everything is working, it's easy to change plex-overseerr with jellyfin-jellyseerr.

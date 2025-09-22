@@ -1,18 +1,33 @@
 services:
-    plex:
-        image: lscr.io/linuxserver/plex:latest
-        container_name: plex
-        network_mode: bridge
+#    plex:
+#        image: lscr.io/linuxserver/plex:latest
+#        container_name: plex
+#        network_mode: bridge
+#        env_file:
+#          - .env
+#        volumes:
+#            - ${DOCKER_CONFIG_FOLDER}/plex:/config
+#            - ${MEDIA_DOWNLOAD_FOLDER}/data/shows:/tv  
+#            - ${MEDIA_DOWNLOAD_FOLDER}/data/movies:/movies 
+#        restart: unless-stopped
+#        ports:
+#          - 32400:32400/tcp
+#          - 32469:32469/udp
+    jellyfin:
+        image: lscr.io/linuxserver/jellyfin:latest
+        container_name: jellyfin
         env_file:
           - .env
         volumes:
-            - ${DOCKER_CONFIG_FOLDER}/plex:/config
-            - ${MEDIA_DOWNLOAD_FOLDER}/data/shows:/tv  
-            - ${MEDIA_DOWNLOAD_FOLDER}/data/movies:/movies 
-        restart: unless-stopped
+          - ${DOCKER_CONFIG_FOLDER}/jellyfin:/config
+          - ${MEDIA_DOWNLOAD_FOLDER}/data/shows:/tv  
+          - ${MEDIA_DOWNLOAD_FOLDER}/data/movies:/movies 
         ports:
-          - 32400:32400/tcp
-          - 32469:32469/udp
+          - 8096:8096
+          - 8920:8920 
+          - 7359:7359/udp
+          - 1900:1900/udp 
+        restart: unless-stopped
     qbittorrent:
         image: dyonr/qbittorrentvpn
         restart: unless-stopped
@@ -58,13 +73,24 @@ services:
         ports:
             - 9117:9117
         restart: unless-stopped
-    overseerr:
-        image: lscr.io/linuxserver/overseerr:latest
-        container_name: overseerr
-        env_file:
-          - .env
-        volumes:
-            - ${DOCKER_CONFIG_FOLDER}/overseerr:/config
-        ports:
+#    overseerr:
+#        image: lscr.io/linuxserver/overseerr:latest
+#        container_name: overseerr
+#        env_file:
+#          - .env
+#        volumes:
+#            - ${DOCKER_CONFIG_FOLDER}/overseerr:/config
+#        ports:
+#            - 5055:5055
+#        restart: unless-stopped
+    jellyseerr:
+       image: fallenbagel/jellyseerr:latest
+       container_name: jellyseerr
+       env_file:
+         - .env
+       ports:
             - 5055:5055
-        restart: unless-stopped
+       volumes:
+            - ${DOCKER_CONFIG_FOLDER}/jellyseerr:/app/config
+       restart: unless-stopped
+

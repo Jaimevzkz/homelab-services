@@ -16,8 +16,8 @@ info "Shutting down immich"
 cd ~/homelab-services/immich/
 docker-compose down
 
-info "Shutting down plex"
-cd ~/homelab-services/plex/
+info "Shutting down jellyfin"
+cd ~/homelab-services/jellyfin/
 docker-compose down
 
 info "All services shut down"

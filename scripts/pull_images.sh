@@ -16,8 +16,8 @@ info "Pull Immich"
 cd ~/homelab-services/immich/
 docker compose pull
 
-info "Pull Plex"
-cd ~/homelab-services/plex/
+info "Pull Jellyfin"
+cd ~/homelab-services/jellyfin/
 docker compose pull
 
 info "All services pulled"

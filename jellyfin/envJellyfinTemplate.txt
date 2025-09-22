@@ -11,5 +11,6 @@ LAN_NETWORK={your-local-ip}
 NAME_SERVERS=1.1.1.1,1.0.0.1
 ENABLE_SSL=yes
 HEALTH_CHECK_HOST=one.one.one.one
-
+JELLYFIN_PublishedServerUrl={your-jellyfin-url}
+LOG_LEVEL=info
 

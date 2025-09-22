@@ -17,8 +17,8 @@ info "Immich UP"
 cd ~/homelab-services/immich/
 docker compose up -d
 
-info "Plex UP"
-cd ~/homelab-services/plex/
+info "Jellyfin UP"
+cd ~/homelab-services/jellyfin/
 docker compose up -d
 
 info "All services up"
