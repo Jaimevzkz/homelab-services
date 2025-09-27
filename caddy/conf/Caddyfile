@@ -12,11 +12,14 @@
   import cloudflare
 }
 
-# plex
-{env.PLEX_SUBDOMAIN} {
-  reverse_proxy {env.PLEX_LOCALHOST} {
-    header_up Host {host}
-    header_up X-Real-IP {client_ip}
-  }
+# jellyfin
+{env.JELLYFIN_SUBDOMAIN} {
+  reverse_proxy {env.JELLYFIN_LOCALHOST}
+  import cloudflare
+}
+
+# jellyseerr
+{env.JELLYSEERR_SUBDOMAIN} {
+  reverse_proxy {env.JELLYSEERR_LOCALHOST}
   import cloudflare
 }
