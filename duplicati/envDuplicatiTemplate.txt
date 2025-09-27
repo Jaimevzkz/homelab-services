@@ -1,0 +1,8 @@
+PUID=1000
+PGID=1000
+TZ=Europe/Amsterdam
+DUPLICATI__WEBSERVICE_PASSWORD={your-password}
+SETTINGS_ENCRYPTION_KEY={your-encryption-key}
+DOCKER_CONFIG_FOLDER={your-docker-config-folder}
+IMMICH_LIBRARY_FOLDER={your-immich-library-folder}
+

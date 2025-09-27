@@ -1,0 +1,13 @@
+services:
+   duplicati:
+     image: lscr.io/linuxserver/duplicati:latest
+     container_name: duplicati
+     ports:
+       - 8200:8200
+     env_file:
+          - .env
+     volumes:
+       - ${DOCKER_CONFIG_FOLDER}/duplicati:/config
+       - ${DOCKER_CONFIG_FOLDER}:/ddocker-configs
+       - ${IMMICH_LIBRARY_FOLDER}:/iimmich-library
+     restart: unless-stopped
