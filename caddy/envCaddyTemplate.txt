@@ -1,5 +1,8 @@
 CLOUDFLARE_API_TOKEN={your-cloudflare-token}
 IMMICH_LOCALHOST={localIp:immich-port}
 IMMICH_SUBDOMAIN={your-subdomain-for-cloudflare}
-PLEX_LOCALHOST={localIp:plex-port}
-PLEX_SUBDOMAIN={your-subdomain-for-cloudflare}
+JELLYFIN_LOCALHOST={localIp:jellyfin-port}
+JELLYFIN_SUBDOMAIN={your-subdomain-for-cloudflare}
+JELLYSEERR_LOCALHOST={localIp:jellyseerr-port}
+JELLYSEERR_SUBDOMAIN={your-subdomain-for-cloudflare}
+
