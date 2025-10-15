@@ -7,6 +7,8 @@ services:
      env_file:
           - .env
      volumes:
+       - ${LOCAL_BACKUP_DUPLICATI_FOLDER}/backup-folder:/bbackup-folder
+       - ${LOCAL_BACKUP_DUPLICATI_FOLDER}/restore-folder:/rrestore-folder
        - ${DOCKER_CONFIG_FOLDER}/duplicati:/config
        - ${DOCKER_CONFIG_FOLDER}:/ddocker-configs
        - ${IMMICH_LIBRARY_FOLDER}:/iimmich-library
