@@ -8,12 +8,22 @@ info() {
 }
 
 SERVICES=("caddy" "immich" "jellyfin")
+EXTENDED_SERVICES=("duplicati")
 BASE_DIR=~/homelab-services
 
 for service in "${SERVICES[@]}"; do
     info "Shutting down $service"
     (cd "$BASE_DIR/$service" && docker compose down)
 done
+
+if [[ "${1:-}" == "-a" ]]; then
+  info "down extended services"
+  for service in "${EXTENDED_SERVICES[@]}"; do
+    info "Shutting down $service"
+    (cd "$BASE_DIR/$service" && docker compose down)
+  done
+fi
+
 
 info "All services shut down"
 

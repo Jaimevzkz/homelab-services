@@ -8,12 +8,23 @@ info() {
 }
 
 SERVICES=("caddy" "immich" "jellyfin")
+EXTENDED_SERVICES=("duplicati")
 BASE_DIR=~/homelab-services
 
 for service in "${SERVICES[@]}"; do
     info "Starting $service"
     (cd "$BASE_DIR/$service" && docker compose up -d)
 done
+
+if [[ "${1:-}" == "-a" ]]; then
+  info "luanching extended services"
+  for service in "${EXTENDED_SERVICES[@]}"; do
+    info "Starting $service"
+    (cd "$BASE_DIR/$service" && docker compose up -d)
+  done
+fi
+
+
 
 info "All services are up"
 

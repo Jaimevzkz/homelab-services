@@ -9,6 +9,6 @@ info() {
 }
 
 info "Update And Restart"
-~/homelab-services/scripts/down_all_services.sh
-~/homelab-services/scripts/pull_images.sh
-~/homelab-services/scripts/launch_services.sh
+~/homelab-services/scripts/down_all_services.sh $1
+~/homelab-services/scripts/pull_images.sh $1
+~/homelab-services/scripts/launch_services.sh $1
