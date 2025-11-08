@@ -1,14 +1,12 @@
 (cloudflare) {
   tls {
     dns cloudflare {env.CLOUDFLARE_API_TOKEN}
-  
   }
 }
 
 # immich
 {env.IMMICH_SUBDOMAIN} {
   reverse_proxy {env.IMMICH_LOCALHOST}
-
   import cloudflare
 }
 
@@ -21,5 +19,33 @@
 # jellyseerr
 {env.JELLYSEERR_SUBDOMAIN} {
   reverse_proxy {env.JELLYSEERR_LOCALHOST}
+  import cloudflare
+}
+
+# qbittorrent
+{env.QBITTORRENT_SUBDOMAIN} {
+  reverse_proxy {env.QBITTORRENT_LOCALHOST} {
+    transport http {
+      tls_insecure_skip_verify
+    }
+  }
+  import cloudflare
+}
+
+# sonarr
+{env.SONARR_SUBDOMAIN} {
+  reverse_proxy {env.SONARR_LOCALHOST}
+  import cloudflare
+}
+
+# radarr
+{env.RADARR_SUBDOMAIN} {
+  reverse_proxy {env.RADARR_LOCALHOST}
+  import cloudflare
+}
+
+# duplicati
+{env.DUPLICATI_SUBDOMAIN} {
+  reverse_proxy {env.DUPLICATI_LOCALHOST}
   import cloudflare
 }

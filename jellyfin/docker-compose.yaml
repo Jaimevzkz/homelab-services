@@ -1,18 +1,4 @@
 services:
-#    plex:
-#        image: lscr.io/linuxserver/plex:latest
-#        container_name: plex
-#        network_mode: bridge
-#        env_file:
-#          - .env
-#        volumes:
-#            - ${DOCKER_CONFIG_FOLDER}/plex:/config
-#            - ${MEDIA_DOWNLOAD_FOLDER}/data/shows:/tv  
-#            - ${MEDIA_DOWNLOAD_FOLDER}/data/movies:/movies 
-#        restart: unless-stopped
-#        ports:
-#          - 32400:32400/tcp
-#          - 32469:32469/udp
     jellyfin:
         image: lscr.io/linuxserver/jellyfin:latest
         container_name: jellyfin

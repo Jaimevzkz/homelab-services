@@ -7,7 +7,7 @@ info() {
     echo -e "\033[1;34m[INFO]\033[0m $1"
 }
 
-SERVICES=("caddy" "immich" "jellyfin")
+SERVICES=("caddy" "immich" "jellyfin" "syncthing")
 EXTENDED_SERVICES=("duplicati")
 BASE_DIR=~/homelab-services
 
