@@ -24,7 +24,7 @@ services:
     image: ghcr.io/immich-app/immich-machine-learning:${IMMICH_VERSION:-release}
     volumes:
       - model-cache:/cache
-    user: "${PUID}:${PGID}"
+    #user: "${PUID}:${PGID}"
     env_file:
       - .env
     restart: always
