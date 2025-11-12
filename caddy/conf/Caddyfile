@@ -49,3 +49,9 @@
   reverse_proxy {env.DUPLICATI_LOCALHOST}
   import cloudflare
 }
+
+# Actual
+{env.ACTUAL_SUBDOMAIN} {
+  reverse_proxy {env.ACTUAL_LOCALHOST}
+  import cloudflare
+}
