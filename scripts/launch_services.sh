@@ -4,7 +4,7 @@ set -euo pipefail
 
 # Function to print info
 info() {
-    echo -e "\033[1;34m[INFO]\033[0m $1"
+    echo -e "\033[1;34m[LAUNCH]\033[0m $1"
 }
 
 SERVICES=("caddy" "immich" "jellyfin" "syncthing" "actual")
