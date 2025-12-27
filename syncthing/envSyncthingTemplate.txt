@@ -1,0 +1,4 @@
+PUID=1000
+PGID=1000
+VAULT_LOCATION={your-vault-location}
+DOCKER_CONFIG_FOLDER={your-config-folder}
